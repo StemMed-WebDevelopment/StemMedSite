@@ -1,34 +1,25 @@
-/* Base Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* === BASE STYLING === */
 
 body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
   background-color: #fff;
-  color: #222;
-  padding: 0 1rem;
+  color: #000;
+  line-height: 1.6;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
-}
-
-ul {
-  list-style: none;
+  color: inherit;
 }
 
 header {
+  background-color: #f0f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid #ddd;
-  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #ccc;
 }
 
 .logo img {
@@ -37,143 +28,139 @@ header {
 
 nav ul {
   display: flex;
-  gap: 1.2rem;
+  list-style: none;
+  gap: 1.5rem;
 }
 
-nav ul li a {
-  font-weight: 600;
-}
-
-main {
-  max-width: 1000px;
-  margin: 2rem auto;
-}
-
-section {
-  margin-bottom: 3rem;
+nav a {
+  font-weight: bold;
+  color: #000;
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #f9fafb, #e2e8f0);
+  border-bottom: 2px solid #ccc;
 }
 
 .hero-text {
   flex: 1;
-  min-width: 260px;
+  padding-right: 2rem;
 }
 
-.hero-img img {
-  max-width: 100%;
-  height: auto;
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: #357EDD;
-  color: #fff;
-  padding: 0.75rem 1.2rem;
-  border-radius: 5px;
-  margin-top: 1rem;
+  background-color: #00a86b;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #245bbf;
+  background-color: #007e50;
 }
 
-h2, h3, h4 {
-  margin-bottom: 0.8rem;
+.hero-img img {
+  width: 100%;
+  max-width: 400px;
 }
 
-.content-block {
-  border-left: 5px solid #444;
-  padding-left: 1rem;
+main {
+  padding: 2rem;
 }
 
-.about {
-  margin-top: 3rem;
-  border-left: 5px solid #222;
-  padding-left: 1rem;
+section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+section h3 {
+  margin-top: 0;
+}
+
+#research {
+  border-left: 6px solid #007BFF;
+}
+
+#stories {
+  border-left: 6px solid #e63946;
+}
+
+#initiatives {
+  border-left: 6px solid #00a86b;
+}
+
+.about,
+#contact,
+footer {
+  border-left: 6px solid transparent;
 }
 
 footer {
-  border-top: 1px solid #ddd;
-  padding-top: 2rem;
-  margin-top: 4rem;
+  background-color: #f0f0f0;
   text-align: center;
+  padding: 2rem;
   font-size: 0.9rem;
+  border-top: 2px solid #ccc;
 }
 
 footer a {
-  color: #000;
-  text-decoration: underline;
+  color: #007BFF;
+  font-weight: bold;
 }
 
-footer .socials {
-  margin-top: 0.5rem;
+.socials a {
+  margin: 0 0.5rem;
 }
 
-/* Remove green from logo and contact */
-.logo, footer a, footer p, nav ul li a {
-  color: #000;
-}
+/* === MOBILE RESPONSIVE STYLING === */
 
-/* Highlight color only on allowed sections */
-#initiatives, #stories, #research {
-  border-left: 5px solid #357EDD;
-}
-
-#initiatives h3, #stories h3, #research h3 {
-  color: #357EDD;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-left: 0;
-  }
-
   .hero {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   .hero-text {
-    order: 2;
+    padding-right: 0;
   }
 
-  .hero-img {
-    order: 1;
-    max-width: 80%;
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
   }
 
   .cta-button {
-    margin-top: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
   }
 
-  .content-block, .about {
-    border-left-width: 4px;
-    padding-left: 0.75rem;
+  .hero-img img {
+    max-width: 80%;
+    margin-top: 2rem;
   }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
+  section {
+    padding: 1.5rem 1rem;
   }
 }

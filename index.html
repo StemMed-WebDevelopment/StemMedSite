@@ -37,7 +37,7 @@
 
     <section id="initiatives" class="content-block">
       <h3>Initiatives</h3>
-      <p>Our current goal is to address rural healthcare disparities in vermillion county by working towards,:</p>
+      <p>Our current goal is to address rural healthcare disparities in Vermilion County by working towards:</p>
       <ul>
         <li><strong>Providing Rural Health Support:</strong> Providing education and resources to improve healthcare access in rural Illinois.</li>
         <li><strong>Building Community Health Workshops:</strong> Bringing hands-on health education directly to local schools and centers.</li>
@@ -63,5 +63,23 @@
       <a href="https://www.instagram.com/stemmed_project/">Instagram</a> | <a href="https://www.gofundme.com/manage/support-rural-health-in-illinois-vermillion-county">Donate</a>
     </div>
   </footer>
+
+  <script>
+    const blocks = document.querySelectorAll('.content-block');
+
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      blocks.forEach(block => {
+        const blockTop = block.getBoundingClientRect().top;
+        if(blockTop < triggerBottom) {
+          block.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>

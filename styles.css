@@ -124,30 +124,7 @@ nav a:hover::after {
   border-radius: 12px;
 }
 
-/* About Section */
-.about {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #00ff88;
-}
-
-.about blockquote {
-  margin-top: 20px;
-  font-style: italic;
-  color: #ccc;
-  border-left: 4px solid #00ff88;
-  padding-left: 15px;
-}
-
-/* Content Blocks for Initiatives, Research, Stories */
+/* Content Blocks */
 .content-block {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -155,6 +132,7 @@ nav a:hover::after {
   padding: 30px 40px;
   margin-bottom: 40px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  color: #ccc; /* default text color for content blocks */
 }
 
 .content-block h3 {
@@ -184,32 +162,28 @@ nav a:hover::after {
   padding-bottom: 5px;
 }
 
-.content-block p {
-  margin-bottom: 20px;
+.content-block p,
+.content-block ul,
+.content-block li {
   color: #ccc;
 }
 
 .content-block ul {
   list-style-type: disc;
   margin-left: 20px;
-  color: #bbb;
 }
 
 .content-block ul li {
   margin-bottom: 10px;
 }
 
-.content-block article {
-  margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 15px 20px;
-  border-radius: 12px;
-  color: #e6e6e6;
-}
-
-.content-block article h4 {
-  margin-bottom: 8px;
-  color: #fff;
+/* About block quote */
+.about blockquote {
+  margin-top: 20px;
+  font-style: italic;
+  color: #aaa;
+  border-left: 4px solid #777;
+  padding-left: 15px;
 }
 
 /* Footer */

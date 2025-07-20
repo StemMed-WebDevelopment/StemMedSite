@@ -112,6 +112,42 @@ nav a:hover {
   margin-bottom: 1rem;
   border-bottom: 2px solid #00ff88;
   display: inline-block;
+  /* Glow text shadows for dark mode */
+  text-shadow:
+    0 0 8px #00ff88,
+    0 0 16px #00ff88,
+    0 0 24px #00ff88;
+}
+
+/* Glowing colored headings for specific sections */
+#initiatives h3 {
+  color: #00ff88;
+  border-bottom: 2px solid #00ff88;
+  padding-bottom: 6px;
+  text-shadow:
+    0 0 8px #00ff88,
+    0 0 16px #00ff88,
+    0 0 24px #00ff88;
+}
+
+#research h3 {
+  color: #33bbff;
+  border-bottom: 2px solid #33bbff;
+  padding-bottom: 6px;
+  text-shadow:
+    0 0 8px #33bbff,
+    0 0 16px #33bbff,
+    0 0 24px #33bbff;
+}
+
+#stories h3 {
+  color: #ff4444;
+  border-bottom: 2px solid #ff4444;
+  padding-bottom: 6px;
+  text-shadow:
+    0 0 8px #ff4444,
+    0 0 16px #ff4444,
+    0 0 24px #ff4444;
 }
 
 .content-block p {
@@ -172,21 +208,26 @@ body.light-theme .cta-button:hover {
 
 body.light-theme .content-block h3 {
   color: #000;
+  border-bottom-color: #000;
+  text-shadow: none;
 }
 
 body.light-theme #initiatives h3 {
   color: #00bb66;
   border-bottom: 2px solid #00bb66;
+  text-shadow: none;
 }
 
 body.light-theme #research h3 {
   color: #1188dd;
   border-bottom: 2px solid #1188dd;
+  text-shadow: none;
 }
 
 body.light-theme #stories h3 {
   color: #dd3333;
   border-bottom: 2px solid #dd3333;
+  text-shadow: none;
 }
 
 /* Floating Orbs */
@@ -211,5 +252,31 @@ body.light-theme #stories h3 {
   }
   100% {
     transform: translateY(0) translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .content-block {
+    padding: 1.5rem 1rem;
   }
 }

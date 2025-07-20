@@ -1,166 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Base Styles */
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #0d0d0d;
-  color: #f2f2f2;
-  line-height: 1.6;
-  padding: 20px;
-  scroll-behavior: smooth;
-}
-
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #1a1a1a;
-  padding-bottom: 10px;
-  margin-bottom: 40px;
-}
-
-.logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #00ff88;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #bbb;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #00ff88;
-  transition: width 0.3s;
-}
-
-nav a:hover {
-  color: #fff;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Hero */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 50px;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
-  margin-bottom: 50px;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 300px;
-  margin-right: 30px;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 25px;
-  background: linear-gradient(90deg, #00ff88, #00cc66);
-  color: #0d0d0d;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
-}
-
-.hero-img {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-img img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-/* About Section */
-.about {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #00ff88;
-}
-
-.about blockquote {
-  margin-top: 20px;
-  font-style: italic;
-  color: #ccc;
-  border-left: 4px solid #00ff88;
-  padding-left: 15px;
-}
-
-/* Content Blocks for Research, Stories, Initiatives */
 .content-block {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(0, 255, 136, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 30px 40px;
   margin-bottom: 40px;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .content-block h3 {
-  color: #00ff88;
   margin-bottom: 15px;
   font-size: 2rem;
+  color: #fff; /* default white */
+}
+
+/* Specific colors for each section heading */
+#initiatives h3 {
+  color: #00ff88; /* green */
+  border-bottom: 2px solid #00ff88;
+  padding-bottom: 5px;
+}
+
+#research h3 {
+  color: #0099ff; /* blue */
+  border-bottom: 2px solid #0099ff;
+  padding-bottom: 5px;
+}
+
+#stories h3 {
+  color: #ff4444; /* red */
+  border-bottom: 2px solid #ff4444;
+  padding-bottom: 5px;
 }
 
 .content-block p {
@@ -180,38 +49,13 @@ nav a:hover::after {
 
 .content-block article {
   margin-bottom: 20px;
-  background: rgba(0, 255, 136, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 15px 20px;
   border-radius: 12px;
-  color: #e6ffe6;
+  color: #e6e6e6;
 }
 
 .content-block article h4 {
   margin-bottom: 8px;
-  color: #00ff88;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-footer a {
-  color: #00ff88;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-footer a:hover {
   color: #fff;
-}
-
-footer .socials {
-  margin-top: 10px;
-  font-size: 1rem;
-  display: inline-flex;
-  gap: 10px;
 }

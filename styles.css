@@ -6,10 +6,6 @@
   --glass-border: rgba(255, 255, 255, 0.15);
   --text-main: #f2f2f2;
 
-  --highlight-initiatives: #00ff88;
-  --highlight-research: #0099ff;
-  --highlight-stories: #ff4444;
-
   --blur: 12px;
   --radius: 16px;
   --transition: 0.4s ease;
@@ -25,13 +21,12 @@
 /* Base Styles */
 body {
   font-family: 'Inter', sans-serif;
-  background: var(--background);
+  background-color: var(--background);
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.15), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(0, 153, 255, 0.1), transparent 50%),
-    radial-gradient(circle at 50% 90%, rgba(255, 68, 68, 0.12), transparent 40%);
+    radial-gradient(circle at 25% 30%, rgba(255, 255, 255, 0.05), transparent 60%),
+    radial-gradient(circle at 75% 70%, rgba(255, 255, 255, 0.03), transparent 50%);
   background-repeat: no-repeat;
-  background-size: 600px 600px, 500px 500px, 400px 400px;
+  background-size: 600px 600px, 500px 500px;
   background-attachment: fixed;
   background-position: center;
   color: var(--text-main);
@@ -39,8 +34,18 @@ body {
   padding: 20px;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  position: relative;
   min-height: 100vh;
+  animation: slowFloat 30s ease-in-out infinite;
+}
+
+/* Subtle orb background movement */
+@keyframes slowFloat {
+  0%, 100% {
+    background-position: 25% 30%, 75% 70%;
+  }
+  50% {
+    background-position: 27% 32%, 73% 68%;
+  }
 }
 
 /* Scrollbar */
@@ -49,7 +54,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
 }
 
@@ -58,17 +63,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid var(--glass-border);
   padding-bottom: 10px;
   margin-bottom: 40px;
   backdrop-filter: blur(var(--blur));
   background: var(--glass-bg);
   border-radius: var(--radius);
-  box-shadow: 0 8px 32px 0 rgba(0, 255, 136, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -100,7 +103,7 @@ nav a::after {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--highlight-initiatives);
+  background-color: var(--text-main);
   transition: width var(--transition);
   border-radius: 2px;
 }
@@ -123,34 +126,9 @@ nav a:hover::after {
   backdrop-filter: blur(var(--blur));
   border-radius: var(--radius);
   padding: 50px;
-  box-shadow: 0 0 40px rgba(0, 255, 136, 0.15);
   margin-bottom: 50px;
   position: relative;
   overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 150%;
-  height: 150%;
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), transparent 70%);
-  filter: blur(100px);
-  pointer-events: none;
-  animation: shimmer 5s linear infinite;
-  border-radius: var(--radius);
-  mix-blend-mode: screen;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
 }
 
 .hero-text {
@@ -164,7 +142,7 @@ nav a:hover::after {
   font-size: 2.5rem;
   margin-bottom: 15px;
   color: #fff;
-  text-shadow: 0 0 12px rgba(0, 255, 136, 0.7);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .cta-button {
@@ -177,38 +155,16 @@ nav a:hover::after {
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
-.cta-button::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-  top: 0;
-  left: -120%;
-  transform: skewX(-25deg);
-  transition: none;
-}
-
-.cta-button:hover::before {
-  animation: shine 1s forwards;
-}
-
-@keyframes shine {
-  100% {
-    left: 120%;
-  }
-}
-
 .cta-button:hover {
   background-color: #ccc;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
   color: #000;
 }
 
@@ -224,8 +180,8 @@ nav a:hover::after {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius);
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-  transition: transform 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .hero-img img:hover {
@@ -239,75 +195,31 @@ nav a:hover::after {
   border-radius: var(--radius);
   padding: 30px 40px;
   margin-bottom: 40px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
   color: #ccc;
   backdrop-filter: blur(var(--blur));
   transition: border-color var(--transition), box-shadow var(--transition);
   position: relative;
-  overflow: hidden;
 }
 
-.content-block::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: var(--radius);
-  box-shadow:
-    inset 0 0 50px 2px rgba(255, 255, 255, 0.1),
-    inset 0 0 10px 1px rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.content-block:hover::before {
-  opacity: 1;
-}
-
-/* Section heading colors */
 .content-block h3 {
   margin-bottom: 15px;
   font-size: 2rem;
+  color: #fff;
   border-bottom: none;
   padding-bottom: 0;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 1;
-  color: #fff;
 }
 
-/* Specific heading colors and border glows */
+/* Specific heading colors */
 #initiatives h3 {
-  color: var(--highlight-initiatives);
-  border-bottom: 2px solid var(--highlight-initiatives);
-  box-shadow: 0 0 15px var(--highlight-initiatives);
-}
-
-#initiatives.content-block {
-  border-color: var(--highlight-initiatives);
-  box-shadow: 0 0 25px var(--highlight-initiatives);
+  color: #00ff88;
 }
 
 #research h3 {
-  color: var(--highlight-research);
-  border-bottom: 2px solid var(--highlight-research);
-  box-shadow: 0 0 15px var(--highlight-research);
-}
-
-#research.content-block {
-  border-color: var(--highlight-research);
-  box-shadow: 0 0 25px var(--highlight-research);
+  color: #0099ff;
 }
 
 #stories h3 {
-  color: var(--highlight-stories);
-  border-bottom: 2px solid var(--highlight-stories);
-  box-shadow: 0 0 15px var(--highlight-stories);
-}
-
-#stories.content-block {
-  border-color: var(--highlight-stories);
-  box-shadow: 0 0 25px var(--highlight-stories);
+  color: #ff4444;
 }
 
 .content-block p,
@@ -344,7 +256,7 @@ footer {
   background: var(--glass-bg);
   border-radius: var(--radius);
   padding: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
   user-select: none;
 }
 
@@ -356,25 +268,6 @@ footer a {
 
 footer a:hover {
   color: #fff;
-}
-
-footer .socials {
-  margin-top: 10px;
-  font-size: 1rem;
-  display: inline-flex;
-  gap: 10px;
-}
-
-/* Scroll Reveal */
-.content-block {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.content-block.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Responsive */

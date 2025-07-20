@@ -29,7 +29,7 @@ header {
 .logo {
   font-size: 1.7rem;
   font-weight: 700;
-  color: #00ffc3;
+  color: #00ff88;
 }
 
 nav ul {
@@ -53,7 +53,7 @@ nav a::after {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #00ffc3;
+  background-color: #00ff88;
   transition: width 0.3s;
 }
 
@@ -75,7 +75,7 @@ nav a:hover::after {
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 50px;
-  box-shadow: 0 0 20px rgba(0, 255, 195, 0.05);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.05);
   margin-bottom: 50px;
 }
 
@@ -94,20 +94,20 @@ nav a:hover::after {
 .cta-button {
   display: inline-block;
   margin-top: 25px;
-  background: linear-gradient(90deg, #00c3ff, #00ffc3);
+  background: linear-gradient(90deg, #00ff88, #00cc66);
   color: #0d0d0d;
   padding: 12px 30px;
   border: none;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 200, 0.6);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
 }
 
 .hero-img {
@@ -128,21 +128,21 @@ nav a:hover::after {
   background: rgba(255, 255, 255, 0.03);
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0, 255, 200, 0.03);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .about h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #00ffc3;
+  color: #00ff88;
 }
 
 .about blockquote {
   margin-top: 20px;
   font-style: italic;
   color: #ccc;
-  border-left: 4px solid #00ffc3;
+  border-left: 4px solid #00ff88;
   padding-left: 15px;
 }
 
@@ -155,7 +155,7 @@ footer {
 }
 
 footer a {
-  color: #00ffc3;
+  color: #00ff88;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -168,4 +168,3 @@ footer .socials {
   margin-top: 10px;
   font-size: 1rem;
 }
-

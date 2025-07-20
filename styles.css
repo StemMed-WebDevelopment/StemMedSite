@@ -61,6 +61,12 @@ header {
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease;
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .logo {
@@ -231,7 +237,7 @@ nav a:hover::after {
   border-radius: var(--radius);
   padding: 30px 40px;
   margin-bottom: 40px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
   color: #ccc;
   backdrop-filter: blur(var(--blur));
   transition: border-color var(--transition), box-shadow var(--transition);
@@ -272,34 +278,34 @@ nav a:hover::after {
 #initiatives h3 {
   color: var(--highlight-initiatives);
   border-bottom: 2px solid var(--highlight-initiatives);
-  box-shadow: 0 0 15px var(--highlight-initiatives);
+  box-shadow: 0 0 8px var(--highlight-initiatives);
 }
 
 #initiatives.content-block {
   border-color: var(--highlight-initiatives);
-  box-shadow: 0 0 25px var(--highlight-initiatives);
+  box-shadow: 0 0 15px 5px rgba(0, 255, 136, 0.15);
 }
 
 #research h3 {
   color: var(--highlight-research);
   border-bottom: 2px solid var(--highlight-research);
-  box-shadow: 0 0 15px var(--highlight-research);
+  box-shadow: 0 0 8px var(--highlight-research);
 }
 
 #research.content-block {
   border-color: var(--highlight-research);
-  box-shadow: 0 0 25px var(--highlight-research);
+  box-shadow: 0 0 15px 5px rgba(0, 153, 255, 0.15);
 }
 
 #stories h3 {
   color: var(--highlight-stories);
   border-bottom: 2px solid var(--highlight-stories);
-  box-shadow: 0 0 15px var(--highlight-stories);
+  box-shadow: 0 0 8px var(--highlight-stories);
 }
 
 #stories.content-block {
   border-color: var(--highlight-stories);
-  box-shadow: 0 0 25px var(--highlight-stories);
+  box-shadow: 0 0 15px 5px rgba(255, 68, 68, 0.15);
 }
 
 .content-block p,
@@ -422,6 +428,9 @@ body::after {
   header {
     flex-direction: column;
     gap: 15px;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   nav ul {

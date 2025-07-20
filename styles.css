@@ -27,10 +27,11 @@ header {
   margin-bottom: 40px;
 }
 
+/* Logo - dull white, no green */
 .logo {
   font-size: 1.7rem;
   font-weight: 700;
-  color: #00ff88;
+  color: #eee;
 }
 
 nav ul {
@@ -92,23 +93,25 @@ nav a:hover::after {
   color: #fff;
 }
 
+/* Button - white background, dark text, subtle hover */
 .cta-button {
   display: inline-block;
   margin-top: 25px;
-  background: linear-gradient(90deg, #00ff88, #00cc66);
+  background: #eee;
   color: #0d0d0d;
   padding: 12px 30px;
   border: none;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+  background-color: #ccc;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  color: #000;
 }
 
 .hero-img {
@@ -194,10 +197,11 @@ footer {
   color: #777;
 }
 
+/* Footer links dull white, white on hover */
 footer a {
-  color: #00ff88;
+  color: #ccc;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 footer a:hover {

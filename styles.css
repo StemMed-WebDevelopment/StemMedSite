@@ -1,37 +1,66 @@
+/* =============================================
+   STEM-med Glassmorphic Design + Advanced Features
+   ============================================= */
+
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
+/* CSS Variables */
 :root {
-  --background: rgba(10, 10, 10, 0.9);
+  --background-dark: #0a0a0a;
+  --background-light: #f9f9f9;
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
-  --text-main: #f0f0f0;
-
+  --text-dark: #111;
+  --text-light: #ffffff;
   --highlight-initiatives: #00ff90;
   --highlight-research: #5eb7ff;
   --highlight-stories: #ff5e6c;
-
   --blur: 16px;
   --radius: 20px;
   --transition: 0.3s ease;
+  --shadow-glass: 0 0 40px rgba(255, 255, 255, 0.05);
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Dark mode by default */
 body {
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: var(--text-main);
+  background: var(--background-dark);
+  color: var(--text-light);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  cursor: url('https://cdn-icons-png.flaticon.com/512/60/60525.png'), auto; /* Custom cursor */
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* NAVIGATION */
+/* Light mode toggle (add .light-mode class on body for light) */
+body.light-mode {
+  background: var(--background-light);
+  color: var(--text-dark);
+}
 
+body.light-mode section {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.1);
+  color: var(--text-dark);
+}
+
+body.light-mode nav {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(0,0,0,0.1);
+}
+
+/* Scrollbar styling */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Floating Navigation Bar */
 nav {
   position: fixed;
   top: 0;
@@ -39,27 +68,36 @@ nav {
   backdrop-filter: blur(var(--blur));
   background: var(--glass-bg);
   border-bottom: 1px solid var(--glass-border);
-  z-index: 999;
-  padding: 1rem 3rem;
+  z-index: 9999;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: var(--transition);
+  box-shadow: var(--shadow-glass);
 }
 
 nav.shrink {
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 2rem;
   backdrop-filter: blur(24px);
   background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 50px rgba(0,255,136,0.7);
 }
 
 nav a {
-  color: var(--text-main);
+  color: var(--text-light);
   text-decoration: none;
   margin: 0 1rem;
   font-weight: 600;
   position: relative;
   transition: var(--transition);
+  user-select: none;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--highlight-initiatives);
+  outline: none;
 }
 
 nav a::after {
@@ -73,30 +111,23 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
-nav a:hover,
-nav a:focus {
-  color: var(--highlight-initiatives);
-}
-
 nav a:hover::after,
 nav a:focus::after {
   width: 100%;
 }
 
-/* LOGO */
-
+/* Logo */
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--text-main);
+  color: var(--text-light);
   letter-spacing: 0.03em;
   text-shadow: 0 0 8px rgba(255 255 255 / 0.15);
   user-select: none;
   cursor: default;
 }
 
-/* HERO */
-
+/* HERO Section */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -108,7 +139,7 @@ nav a:focus::after {
   padding: 50px;
   margin: 6rem auto 5rem;
   max-width: 1100px;
-  box-shadow: 0 0 40px rgba(0, 255, 136, 0.1);
+  box-shadow: var(--shadow-glass);
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
 }
@@ -120,7 +151,7 @@ nav a:focus::after {
 
 .hero h2 {
   font-size: 2.8rem;
-  color: var(--text-main);
+  color: var(--text-light);
   margin-bottom: 1.2rem;
   text-shadow: 0 0 15px rgba(255 255 255 / 0.25);
   line-height: 1.1;
@@ -134,12 +165,11 @@ nav a:focus::after {
   max-width: 520px;
 }
 
-/* CTA BUTTON */
-
+/* CTA Button */
 .cta-button {
   display: inline-block;
   background: linear-gradient(90deg, var(--highlight-initiatives), #00cc75);
-  color: #0a0a0a;
+  color: var(--background-dark);
   font-weight: 700;
   padding: 14px 36px;
   border-radius: 30px;
@@ -154,10 +184,10 @@ nav a:focus::after {
   transform: scale(1.08);
   box-shadow: 0 0 30px rgba(0, 255, 136, 0.9);
   outline: none;
+  color: #fff;
 }
 
-/* HERO IMAGE */
-
+/* Hero Image */
 .hero-img {
   flex: 1 1 300px;
   display: flex;
@@ -172,8 +202,7 @@ nav a:focus::after {
   user-select: none;
 }
 
-/* CONTENT BLOCKS */
-
+/* Content Blocks */
 section {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
@@ -182,7 +211,7 @@ section {
   margin: 3rem auto;
   max-width: 900px;
   backdrop-filter: blur(var(--blur));
-  box-shadow: 0 0 30px rgba(255 255 255 / 0.1);
+  box-shadow: var(--shadow-glass);
   color: #ccc;
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
@@ -194,6 +223,7 @@ section.visible {
   transform: translateY(0);
 }
 
+/* Section Headings */
 section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -223,6 +253,7 @@ section.stories h2 {
   box-shadow: 0 0 20px var(--highlight-stories);
 }
 
+/* Section paragraphs and lists */
 section p,
 section ul,
 section li {
@@ -240,8 +271,7 @@ section ul li {
   margin-bottom: 0.8rem;
 }
 
-/* ABOUT blockquote */
-
+/* About blockquote */
 .about blockquote {
   margin-top: 1.5rem;
   font-style: italic;
@@ -250,8 +280,7 @@ section ul li {
   padding-left: 1rem;
 }
 
-/* FOOTER */
-
+/* Footer */
 footer {
   margin-top: 6rem;
   padding: 3rem 0;
@@ -262,7 +291,7 @@ footer {
 }
 
 footer a {
-  color: var(--text-main);
+  color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -281,10 +310,9 @@ footer .socials {
   font-size: 1rem;
 }
 
-/* BACKGROUND ORBS */
-
+/* Background Orbs */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   width: 600px;
   height: 600px;
@@ -294,59 +322,36 @@ body::before {
   filter: blur(100px);
   z-index: 0;
   animation: float 15s ease-in-out infinite;
-  opacity: 0.25;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   width: 400px;
   height: 400px;
-  bottom: -150px;
-  left: -150px;
+  bottom: -100px;
+  left: -100px;
   background: radial-gradient(circle, var(--highlight-stories), transparent);
   filter: blur(100px);
   z-index: 0;
   animation: float2 20s ease-in-out infinite;
-  opacity: 0.25;
+  opacity: 0.2;
   pointer-events: none;
 }
 
-/* BUTTONS */
-
-button, .button {
-  background: transparent;
-  border: 2px solid var(--highlight-initiatives);
-  color: var(--text-main);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: var(--transition);
-  backdrop-filter: blur(5px);
-}
-
-button:hover, .button:hover,
-button:focus, .button:focus {
-  background: var(--highlight-initiatives);
-  color: #0a0a0a;
-  box-shadow: 0 0 20px var(--highlight-initiatives);
-  transform: scale(1.05);
-  outline: none;
-}
-
-/* ANIMATIONS */
-
+/* Animations */
 @keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-20px, 30px); }
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(30px) translateX(-20px); }
+  100% { transform: translateY(0) translateX(0); }
 }
 
 @keyframes float2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(30px, -20px); }
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(30px); }
+  100% { transform: translateY(0) translateX(0); }
 }
 
 @keyframes fadeInUp {
@@ -354,12 +359,11 @@ button:focus, .button:focus {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* SCROLL REVEAL HELPER - toggle .visible via JS */
-
+/* Scroll reveal */
 section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: all 0.6s ease-out;
 }
 
 section.visible {
@@ -367,34 +371,49 @@ section.visible {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
-
+/* Responsive */
 @media (max-width: 768px) {
   nav {
-    flex-wrap: wrap;
-    padding: 1rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav a {
     margin: 0.5rem 0.75rem;
   }
 
-  .hero {
-    flex-direction: column;
-    padding: 30px 20px;
-    margin-top: 5rem;
-  }
-
-  .hero-text {
-    margin: 0 0 2rem 0;
-  }
-
-  .hero h2 {
-    font-size: 1.8rem;
-  }
-
   section {
-    padding: 2rem 1.5rem;
     margin: 2rem 1rem;
+    padding: 2rem;
   }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Signature Animation: subtle shine on headings */
+section h2::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  top: 0;
+  left: -50px;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-25deg);
+  animation: shine 3s linear infinite;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+section:hover h2::before,
+section:focus-within h2::before {
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% { left: -50px; }
+  100% { left: 150%; }
 }

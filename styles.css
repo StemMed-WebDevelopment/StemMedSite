@@ -3,8 +3,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -14,12 +14,12 @@ a {
 }
 
 header {
-  background-color: #f0f0f0;
+  background-color: #0a0a0a;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #222;
 }
 
 .logo img {
@@ -34,16 +34,16 @@ nav ul {
 
 nav a {
   font-weight: bold;
-  color: #000;
+  color: #fff;
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 2rem;
-  background: linear-gradient(to right, #f9fafb, #e2e8f0);
-  border-bottom: 2px solid #ccc;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  border-bottom: 2px solid #222;
 }
 
 .hero-text {
@@ -54,21 +54,24 @@ nav a {
 .hero-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  color: #ddd;
 }
 
 .cta-button {
-  background-color: #00a86b;
+  background-color: #00a86b; /* Initiatives = green */
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px #00a86b55;
 }
 
 .cta-button:hover {
@@ -81,86 +84,86 @@ nav a {
 }
 
 main {
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 section {
   margin-bottom: 4rem;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  background-color: #111;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  border-left: 6px solid transparent;
+  transition: all 0.3s ease;
 }
 
-section h3 {
-  margin-top: 0;
-}
-
+/* Section Highlights */
 #research {
-  border-left: 6px solid #007BFF;
+  border-left-color: #007BFF;
+  color: #007BFF;
 }
 
 #stories {
-  border-left: 6px solid #e63946;
+  border-left-color: #e63946;
+  color: #e63946;
 }
 
 #initiatives {
-  border-left: 6px solid #00a86b;
+  border-left-color: #00a86b;
+  color: #00a86b;
 }
 
+/* Non-highlighted sections stay white */
 .about,
 #contact,
 footer {
+  color: white;
   border-left: 6px solid transparent;
 }
 
+/* Section Headings */
+section h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+/* Footer */
 footer {
-  background-color: #f0f0f0;
+  background-color: #0a0a0a;
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  border-top: 2px solid #ccc;
+  border-top: 2px solid #222;
+  color: white;
 }
 
 footer a {
-  color: #007BFF;
+  color: white;
   font-weight: bold;
 }
 
 .socials a {
   margin: 0 0.5rem;
+  color: white;
 }
 
-/* === MOBILE RESPONSIVE STYLING === */
+/* Contact Info */
+.contact-info {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #ccc;
+}
 
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Fix spacing between sections */
+.about + #initiatives {
+  margin-top: 4rem;
+}
 
-  .hero-text {
-    padding-right: 0;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: center;
-  }
-
-  .cta-button {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-
-  .hero-img img {
-    max-width: 80%;
-    margin-top: 2rem;
-  }
-
-  section {
-    padding: 1.5rem 1rem;
-  }
+/* Fix: Remove accidental green highlights */
+.cta-button,
+header .logo,
+footer,
+a,
+nav a {
+  color: white !important;
 }

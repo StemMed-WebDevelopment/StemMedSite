@@ -2,80 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>STEM-med</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="STEM-med is a youth-led nonprofit expanding access to STEM and medicine in underserved communities." />
 </head>
 <body>
   <header>
     <div class="logo">STEM-med</div>
     <nav>
-      <a href="#initiatives">Initiatives</a>
-      <a href="#research">Research</a>
-      <a href="#stories">Stories</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#initiatives">Initiatives</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <button id="themeToggle" class="toggle-btn" aria-label="Toggle Theme">🌙</button>
   </header>
 
-  <section class="hero">
-    <h2>Fueling the Future of STEM and Medicine in the Areas that Need it Most.</h2>
-    <p>STEM-med is a youth-led non-profit dedicated to expanding STEM access, research, and medical opportunity, one initiative at a time.</p>
-    <a href="#initiatives" class="cta-button">Learn More</a>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Fueling the Future of STEM and Medicine Where It’s Needed Most</h2>
+        <p>STEM-med is a youth-led nonprofit expanding access to science, research, and medical opportunity in underserved communities — one initiative at a time.</p>
+        <a class="cta-button" href="#initiatives">Explore Our Work</a>
+      </div>
+    </section>
 
-  <section id="initiatives" class="content-block">
-    <h3>Initiatives</h3>
-    <p>From local science workshops to hospital outreach programs, we are building accessible STEM pipelines from the ground up.</p>
-  </section>
+    <section class="about content-block" id="about">
+      <h3>About Us</h3>
+      <p><strong>Founded by Roman Baptiste</strong>, STEM-med connects underserved students with scientific opportunities, mentorship, and medical insight through community-rooted action.</p>
+      <blockquote>"We don’t wait for opportunity. We build it." – Roman B.</blockquote>
+    </section>
 
-  <section id="research" class="content-block">
-    <h3>Research</h3>
-    <p>Our members explore real-world problems through independent and mentored projects across biology, medicine, and more.</p>
-  </section>
+    <section id="initiatives" class="content-block">
+      <h3>Initiatives</h3>
+      <p>Our current initiative is addressing the healthcare gap in rural areas by raising support for improving access and quality of care.</p>
+      <ul>
+        <li><strong>Providing Rural Health Support:</strong> Providing education and resources to improve healthcare access in rural Illinois.</li>
+        <li><strong>Building Community Health Workshops:</strong> Bringing hands-on health education directly to local schools and centers.</li>
+        <li><strong>Volunteer Support:</strong> Connecting youth volunteers with local clinics to assist and learn.</li>
+      </ul>
+    </section>
 
-  <section id="stories" class="content-block">
-    <h3>Student Stories</h3>
-    <p>See how STEM-med is impacting students and communities firsthand through testimonials and featured profiles.</p>
-  </section>
+    <section id="research" class="content-block">
+      <h3>STEM-med Research</h3>
+      <p>Coming soon: youth-led research projects advancing science and medicine in underserved areas.</p>
+    </section>
 
-  <section id="contact" class="content-block">
-    <h3>Get Involved</h3>
-    <p>Join the mission. Whether you’re a student, educator, or organization, there's a way to contribute to the future of STEM and medicine.</p>
-  </section>
+    <section id="stories" class="content-block">
+      <h3>Stories</h3>
+      <p>Coming soon: real stories from students and mentors making an impact with STEM-med.</p>
+    </section>
+  </main>
 
-  <script>
-    // Theme Toggle
-    const toggle = document.getElementById('themeToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      toggle.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
-    });
-
-    // Reveal on Scroll
-    const blocks = document.querySelectorAll('.content-block');
-    function revealOnScroll() {
-      const triggerBottom = window.innerHeight * 0.85;
-      blocks.forEach(block => {
-        const blockTop = block.getBoundingClientRect().top;
-        if (blockTop < triggerBottom) {
-          block.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-
-    // Create Glass Orbs
-    for (let i = 0; i < 5; i++) {
-      const orb = document.createElement('div');
-      orb.classList.add('orb');
-      orb.style.top = `${Math.random() * 100}%`;
-      orb.style.left = `${Math.random() * 100}%`;
-      orb.style.animationDuration = `${10 + Math.random() * 10}s`;
-      document.body.appendChild(orb);
-    }
-  </script>
+  <footer id="contact">
+    <p>© 2025 STEM-med.org — All rights reserved.</p>
+    <p>Contact us:</p>
+    <ul style="list-style: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
+      <li><a href="#" target="_blank" rel="noopener" style="color: #00ff88; text-decoration: none;">Instagram</a></li>
+      <li><a href="#" target="_blank" rel="noopener" style="color: #00ff88; text-decoration: none;">Donate</a></li>
+      <li><a href="mailto:your-email@example.com" style="color: #00ff88; text-decoration: none;">Email</a></li>
+    </ul>
+  </footer>
 </body>
 </html>

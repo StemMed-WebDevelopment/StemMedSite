@@ -14,6 +14,7 @@ body {
   color: #f2f2f2;
   line-height: 1.6;
   padding: 20px;
+  scroll-behavior: smooth;
 }
 
 /* Header */
@@ -146,6 +147,50 @@ nav a:hover::after {
   padding-left: 15px;
 }
 
+/* Content Blocks for Research, Stories, Initiatives */
+.content-block {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: 16px;
+  padding: 30px 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+}
+
+.content-block h3 {
+  color: #00ff88;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.content-block p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.content-block ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #bbb;
+}
+
+.content-block ul li {
+  margin-bottom: 10px;
+}
+
+.content-block article {
+  margin-bottom: 20px;
+  background: rgba(0, 255, 136, 0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #e6ffe6;
+}
+
+.content-block article h4 {
+  margin-bottom: 8px;
+  color: #00ff88;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -167,4 +212,6 @@ footer a:hover {
 footer .socials {
   margin-top: 10px;
   font-size: 1rem;
+  display: inline-flex;
+  gap: 10px;
 }

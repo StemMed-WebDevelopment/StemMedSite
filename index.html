@@ -4,31 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>STEM-med</title>
-  <meta name="description" content="STEM-med is a youth-led nonprofit expanding access to STEM and medicine in underserved communities." />
-  
   <link rel="stylesheet" href="styles.css" />
-  
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta name="description" content="STEM-med is a youth-led nonprofit expanding access to STEM and medicine in underserved communities." />
 </head>
 <body>
-
   <header>
     <div class="logo">STEM-med</div>
     <nav>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul id="nav-menu">
-        <li><a href="#hero" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#stories" class="nav-link">Stories</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#initiatives">Initiatives</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -42,48 +28,56 @@
     </section>
 
     <section id="about" class="content-block about">
-      <h2>About Us</h2>
+      <h3>About Us</h3>
       <p><strong>Founded by Roman Baptiste</strong>, STEM-med connects underserved students with scientific opportunities, mentorship, and medical insight through community-rooted action.</p>
       <blockquote>"We don’t wait for opportunity. We build it." – Roman B.</blockquote>
     </section>
 
-    <section id="initiatives" class="content-block initiatives">
-      <h2><i class="fas fa-heartbeat icon-green"></i> Initiatives</h2>
-      <p>Our current initiative is addressing the healthcare gap in rural healthcare through raising support for it.</p>
+    <section id="initiatives" class="content-block">
+      <h3>Initiatives</h3>
+      <p>Our current initiative is addressing the healthcare gap in rural communities through raising support and awareness.</p>
       <ul>
-        <li><strong>Providing Rural Health Support:</strong> Education and resources to improve healthcare access in rural Illinois.</li>
+        <li><strong>Providing Rural Health Support:</strong> Providing education and resources to improve healthcare access in rural Illinois.</li>
         <li><strong>Building Community Health Workshops:</strong> Bringing hands-on health education directly to local schools and centers.</li>
         <li><strong>Volunteer Support:</strong> Connecting youth volunteers with local clinics to assist and learn.</li>
       </ul>
     </section>
 
-    <section id="research" class="content-block research">
-      <h2><i class="fas fa-flask icon-blue"></i> STEM-med Research</h2>
-      <p><em>Coming soon: youth-led research projects advancing science and medicine in underserved areas.</em></p>
+    <section id="research" class="content-block">
+      <h3>STEM-med Research</h3>
+      <p>Coming soon: youth-led research projects advancing science and medicine in underserved areas.</p>
     </section>
 
-    <section id="stories" class="content-block stories">
-      <h2><i class="fas fa-book-open icon-red"></i> Stories</h2>
-      <p><em>Coming soon: real stories from students and mentors making an impact with STEM-med.</em></p>
+    <section id="stories" class="content-block">
+      <h3>Stories</h3>
+      <p>Coming soon: real stories from students and mentors making an impact with STEM-med.</p>
     </section>
   </main>
 
-  <footer id="contact" class="footer">
-    <div class="footer-inner">
-      <p>© 2025 STEM-med.org — All rights reserved.</p>
-      <nav class="footer-nav" aria-label="Footer social and contact links">
-        <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="#" aria-label="Donate" target="_blank" rel="noopener"><i class="fas fa-donate"></i> Donate</a>
-        <a href="mailto:stemmedproject@gmail.com" aria-label="Email STEM-med project"><i class="fas fa-envelope"></i> Email</a>
-      </nav>
-    </div>
+  <footer id="contact">
+    <p>© 2025 STEM-med.org — All rights reserved.</p>
+    <p>Contact us:</p>
+    <p>
+      <a href="#" aria-label="Instagram">Instagram</a> | 
+      <a href="#" aria-label="Donate">Donate</a> | 
+      <a href="mailto:" aria-label="Email">Email</a>
+    </p>
   </footer>
 
-  <!-- Floating Orbs -->
-  <div class="orb orb1" aria-hidden="true"></div>
-  <div class="orb orb2" aria-hidden="true"></div>
-  <div class="orb orb3" aria-hidden="true"></div>
-
-  <script src="script.js"></script>
+  <script>
+    // Scroll reveal for content blocks
+    const blocks = document.querySelectorAll('.content-block');
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      blocks.forEach(block => {
+        const blockTop = block.getBoundingClientRect().top;
+        if(blockTop < triggerBottom) {
+          block.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>

@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Initiatives – STEM-med</title>
+  <meta name="description" content="Explore STEM-med’s initiatives focusing on improving healthcare access and STEM education in underserved communities." />
+  
+  <link rel="stylesheet" href="initiatives.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">STEM-med</div>
+    <nav>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="initiatives.html" class="nav-link active">Initiatives</a></li>
+        <li><a href="index.html#research" class="nav-link">Research</a></li>
+        <li><a href="index.html#stories" class="nav-link">Stories</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="initiatives-container">
+      <h1><i class="fas fa-heartbeat icon-green"></i> Our Initiatives</h1>
+      <p class="intro">
+        STEM-med’s current initiatives tackle healthcare and STEM education gaps in underserved communities through research, outreach, and partnerships.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h2>Rural Health Access Project (RHAP)</h2>
+          <p>RHAP explores barriers to healthcare in underserved rural communities through student-led research, interviews, and collaboration with local health systems such as OSF.</p>
+          <p class="status">Status: In Progress</p>
+        </article>
+
+        <article class="card placeholder">
+          <h2>Future Initiative</h2>
+          <p>We are currently developing new projects aligned with our mission. Stay tuned!</p>
+        </article>
+      </div>
+
+      <a href="mailto:stemmedproject@gmail.com" class="contact-button" aria-label="Contact STEM-med about partnerships">
+        Contact Us About a Partnership
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 STEM-med.org — All rights reserved.</p>
+    <nav class="footer-nav" aria-label="Footer social and contact links">
+      <a href="https://www.instagram.com/stemmed_project/" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.gofundme.com/f/support-rural-health-in-illinois-vermillion-county" target="_blank" rel="noopener" aria-label="Donate">
+        <i class="fas fa-donate"></i> Donate
+      </a>
+      <a href="mailto:stemmedproject@gmail.com" aria-label="Email STEM-med project">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+    </nav>
+  </footer>
+
+  <script>
+    // Hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navMenu.classList.toggle('open');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', false);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
 

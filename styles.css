@@ -494,3 +494,99 @@ nav a.active::after {
     padding: 1.8rem 1.5rem 2.5rem 1.5rem;
   }
 }
+
+/* === Initiatives Page Additions === */
+
+.initiatives {
+  max-width: 900px;
+  margin: 3rem auto 5rem auto;
+  padding: 0 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #b4f7c1;
+}
+
+.initiatives h1,
+.initiatives h2 {
+  color: #00ff88;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+.initiatives p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #b4f7c1;
+}
+
+.initiative-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.initiative-card {
+  background: rgba(0, 255, 136, 0.07);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.3);
+  flex: 1 1 45%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #d3fbd9;
+  transition: box-shadow 0.3s ease;
+}
+
+.initiative-card:hover {
+  box-shadow: 0 0 60px rgba(0, 255, 136, 0.7);
+}
+
+.initiative-card h2 {
+  margin-bottom: 1rem;
+}
+
+.initiative-card p {
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+.initiative-card .status {
+  font-style: italic;
+  color: #99f0b6;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Button consistent with site */
+.initiatives-button {
+  background-color: #00ff88;
+  color: #000;
+  font-weight: 700;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0, 255, 136, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.initiatives-button:hover,
+.initiatives-button:focus {
+  background-color: #00cc6e;
+  color: #fff;
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.7);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .initiative-card {
+    flex: 1 1 100%;
+  }
+}
+

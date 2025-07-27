@@ -45,6 +45,14 @@ header {
   z-index: 1000;
   transition: background-color 0.3s ease;
   padding: 0;
+  width: 100vw; /* full viewport width */
+  overflow-x: hidden;
+}
+
+.header-fullwidth {
+  width: 100vw;  /* full width container for header background */
+  background-color: inherit; /* same background as header */
+  box-sizing: border-box;
 }
 
 .header-inner {

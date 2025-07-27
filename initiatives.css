@@ -34,35 +34,74 @@ body {
 
 /* Header - same as your main CSS */
 header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--header-bg);
-  backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1.5px solid var(--header-border);
-  box-shadow: 0 2px 8px var(--shadow);
-  z-index: 1000;
-  transition: background-color 0.3s ease;
-  padding: 0;
-  width: 100vw; /* full viewport width */
-  overflow-x: hidden;
-}
-
-.header-fullwidth {
-  width: 100vw;  /* full width container for header background */
-  background-color: inherit; /* same background as header */
-  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #f7fafd;
+  border-bottom: 2px solid #dceaf4;
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #065a82;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #0e1c2f;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0275d8;
+}
+
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #065a82;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #0e1c2f;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0275d8;
+}
+
 
 .logo {
   font-size: 1.8rem;

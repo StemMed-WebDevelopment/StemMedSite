@@ -34,19 +34,30 @@ body {
 
 /* Header - same as your main CSS */
 header {
-  width: 100%;
-  padding: 1rem 2rem;
-  background: #f7fafd;
-  border-bottom: 2px solid #dceaf4;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;           /* Make header background stretch full viewport width */
+  background-color: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1.5px solid var(--header-border);
+  box-shadow: 0 2px 8px var(--shadow);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  padding: 0; /* keep no padding here */
+  margin-left: calc(-50vw + 50%); /* shift left so it aligns with viewport edges */
+  margin-right: calc(-50vw + 50%);
 }
 
+/* Inner container to center content and pad inside header */
 .header-inner {
+  max-width: 1200px; /* site max width */
+  margin: 0 auto;
+  padding: 1.5rem 3rem; /* horizontal spacing */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .logo {

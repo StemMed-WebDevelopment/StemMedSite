@@ -60,10 +60,13 @@ header {
   align-items: center;
 }
 
+/* Logo */
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #065a82;
+  color: var(--accent-dark);
+  letter-spacing: 0.5px;
+  user-select: none;
 }
 
 nav ul {

@@ -211,16 +211,17 @@ nav a.active::after {
   transform: translateY(0);
 }
 
-/* About Section */
+/* About Section — styled exactly like Initiatives */
+
 .about {
   border-color: var(--accent-color);
   box-shadow:
     0 0 30px 4px rgba(161, 213, 201, 0.4),
     0 0 50px 15px rgba(161, 213, 201, 0.2);
   color: #447066;
-  background: rgba(255 255 255 / 0.05); /* if initiatives uses subtle transparency */
+  background: transparent; /* match initiatives if no bg */
   border-radius: 15px; /* if initiatives has this */
-  padding: 1.5rem; /* match initiatives spacing */
+  padding: 1.5rem; /* same spacing */
 }
 
 .about h2 {
@@ -240,13 +241,18 @@ nav a.active::after {
 }
 
 .about blockquote {
-  font-style: italic;
-  border-left: 4px solid var(--accent-color);
-  padding-left: 18px;
-  color: #5b7f75;
-  margin-top: 1rem;
+  font-style: normal; /* no italic */
+  color: #5b7f75; /* same as initiatives li */
   font-size: 1.1rem;
+  padding-left: 28px;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  border-left: none; /* no blockquote border */
+  background: transparent; /* no bubble */
+  border-radius: 0;
+  line-height: 1.5;
 }
+
 
 
 /* Initiatives */

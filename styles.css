@@ -211,31 +211,30 @@ nav a.active::after {
   transform: translateY(0);
 }
 
-/* About Section — styled exactly like Initiatives */
-
+/* Unify About section colors with Initiatives */
 .about {
+  background: rgba(255, 255, 255, 0.55); /* same as content-block */
+  color: #447066; /* same text color as initiatives */
   border-color: var(--accent-color);
   box-shadow:
     0 0 30px 4px rgba(161, 213, 201, 0.4),
     0 0 50px 15px rgba(161, 213, 201, 0.2);
-  color: #447066;
-  background: transparent; /* match initiatives if no bg */
-  border-radius: 15px; /* if initiatives has this */
-  padding: 1.5rem; /* same spacing */
+  border-radius: 20px; /* same border radius as content-block */
+  padding: 2.5rem 2.5rem 3rem 2.5rem; /* match content-block padding */
 }
 
 .about h2 {
+  color: #447066; /* match initiatives h2 */
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 8px;
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: var(--accent-color);
-  border-bottom: 3px solid var(--accent-color);
-  padding-bottom: 8px;
 }
 
 .about p {
+  color: #5b7f75; /* same as initiatives p */
   font-size: 1.1rem;
-  color: #5b7f75;
   margin-bottom: 1rem;
   line-height: 1.5;
 }

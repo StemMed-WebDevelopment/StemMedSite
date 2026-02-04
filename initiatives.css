@@ -78,7 +78,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #0e1c2f;
+  color: var(--link-color);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;

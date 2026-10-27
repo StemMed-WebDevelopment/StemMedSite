@@ -1,7 +1,11 @@
 // Hamburger toggle for mobile nav
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
+
+function closeMenu() {
+  navMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
 
 hamburger.addEventListener('click', () => {
   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
@@ -9,74 +13,40 @@ hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('open');
 });
 
-// Close menu on nav link click (mobile)
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (navMenu.classList.contains('open')) {
-      navMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
+// Close menu after picking a link (mobile). Links navigate normally;
+// CSS scroll-behavior handles smooth scrolling for #anchors.
+navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
-// Highlight nav on scroll using IntersectionObserver
-const sections = document.querySelectorAll('main section, footer');
-const observerOptions = { threshold: 0.5 };
-
+// Highlight the nav link for the section in view (home page only)
+const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    const id = entry.target.id;
-    const navLink = document.querySelector(`nav a[href="#${id}"]`);
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => link.classList.remove('active'));
-      if (navLink) navLink.classList.add('active');
-    }
+    if (!entry.isIntersecting) return;
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+    });
   });
-}, observerOptions);
+}, { rootMargin: '-40% 0px -55% 0px' });
 
-sections.forEach(section => sectionObserver.observe(section));
+document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
 
-// Scroll reveal for content blocks
-const contentBlocks = document.querySelectorAll('.content-block');
-const revealObserverOptions = { threshold: 0.1 };
-
+// Fade sections in as they scroll into view
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Optional: unobserve after reveal for performance
       revealObserver.unobserve(entry.target);
     }
   });
-}, revealObserverOptions);
+}, { threshold: 0.1 });
 
-contentBlocks.forEach(block => revealObserver.observe(block));
-
-// Sticky header background change on scroll with debounce
-const header = document.querySelector('header');
-let scrollTimeout = null;
-
-window.addEventListener('scroll', () => {
-  if (scrollTimeout) {
-    clearTimeout(scrollTimeout);
-  }
-  scrollTimeout = setTimeout(() => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }, 50); // adjust delay as needed
+document.querySelectorAll('main .section .container').forEach(el => {
+  el.classList.add('reveal');
+  revealObserver.observe(el);
 });
 
-// Bonus: Smooth scroll behavior for internal links
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').slice(1);
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+// Add a border/shadow to the header once the page is scrolled
+const header = document.querySelector('.site-header');
+const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+window.addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();

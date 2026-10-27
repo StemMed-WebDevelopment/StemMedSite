@@ -4,89 +4,209 @@
   <!-- romiebear_2010 likes to code-->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>STEM-med</title>
-  <meta name="description" content="STEM-med is a youth-led nonprofit aimed to spread access to science and healthcare where its needed most." />
-  
-  <!-- Linked initatives -->
-  <link rel="stylesheet" href="styles.css" />
-  
-  <!-- Font Awesome CDN for icons -->
+  <title>STEM-med | Youth-Led Health Access in Vermilion County</title>
+  <meta name="description" content="STEM-med is a youth-led nonprofit expanding access to Narcan, health education, and STEM opportunity in Vermilion County, Illinois." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <div class="logo">STEM-med</div>
-      <nav>
-        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="STEM-med home">
+        <span class="logo-mark"><i class="fas fa-plus"></i></span>
+        STEM-med
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav aria-label="Main">
         <ul id="nav-menu">
-          <li><a href="stem-med.org" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
-          <li><a href="#research" class="nav-link">Research</a></li>
-          <li><a href="#stories" class="nav-link">Stories</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#why" class="nav-link">Why It Matters</a></li>
+          <li><a href="#join" class="nav-link">Get Involved</a></li>
+          <li><a href="#join" class="btn btn-primary btn-sm nav-cta">Join the Team</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="hero" class="hero">
-      <div class="hero-text">
-        <h1>Fueling the Future of STEM and Medicine</h1>
-        <p>STEM-med is a youth-led nonprofit expanding access to science, research, and medical opportunity in underserved communities, one initiative at a time.</p>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Youth-led nonprofit &middot; Vermilion County, Illinois</p>
+          <h1>Students putting Narcan and health access where it's needed most.</h1>
+          <p class="lead">STEM-med is a student-run initiative working to fight the opioid crisis in Vermilion County by getting naloxone (Narcan) into the community and teaching people how to use it.</p>
+          <div class="hero-actions">
+            <a href="#join" class="btn btn-primary">Join the Team <i class="fas fa-arrow-right"></i></a>
+            <a href="initiatives.html" class="btn btn-ghost">Our Initiatives</a>
+          </div>
+        </div>
+
+        <aside class="status-panel" aria-label="Where we are now">
+          <p class="panel-label">Where we are now</p>
+          <ol class="status-list">
+            <li class="done">
+              <span class="status-icon"><i class="fas fa-check"></i></span>
+              <div><strong>Narcan supply secured</strong><span>Arranged through the county health department.</span></div>
+            </li>
+            <li class="current">
+              <span class="status-icon"><i class="fas fa-users"></i></span>
+              <div><strong>Building our student team</strong><span>Recruiting volunteers from local high schools and colleges.</span></div>
+            </li>
+            <li>
+              <span class="status-icon"><i class="fas fa-hand-holding-medical"></i></span>
+              <div><strong>Training &amp; distribution</strong><span>Next up: community training sessions and our first distributions.</span></div>
+            </li>
+          </ol>
+        </aside>
       </div>
     </section>
-  
-  <section id="about" class="content-block about">
-    <h2>Join Our Mission</h2>
-    <p><strong>STEM-Med was founded by Roman Baptiste</strong> and is currently in its early stages as a student-led initiative. We're looking for passionate individuals who want to help expand access to healthcare and STEM education in underserved communities.</p>
-    <a href="mailto:stemmedproject@gmail.com" class="cta-button" target="_blank" rel="noopener" aria-label="Email STEM-Med">Contact Us</a>
-  </section>
 
-    <section id="initiatives" class="content-block initiatives">
-      <h2><i class="fas fa-heartbeat icon-green"></i> Initiatives</h2>
-      <p>Our current goal is addressing the opiod crises in Vermilion Country.</p>
-      <ul>
-        <li><strong>Supplying Narcan:</strong> We hope through fiscal sponsorship we can apply for grants and Narcan shipping services.</li>
-        <li><strong>Supplying Fentanyl Test Strips:</strong> We hope to supply Fentanyl test strips to people in underserved areas.</li>
-        <li><strong>Distribute Supplies:</strong> With these supplies we hop to distribute them to underserved, and vital shelters throughout Vermilion county.</li>
-      </ul>
-      <a href="initiatives.html" class="initiatives-button" aria-label="Explore our initiatives">   Explore Our Initiatives </a> 
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2>Built by students, for our community.</h2>
+        </div>
+        <div class="prose">
+          <p>STEM-med was founded by <strong>Roman Baptiste</strong> to expand access to healthcare and STEM education in underserved communities, starting at home in Vermilion County.</p>
+          <p>We're in our early stages, and we're building the right way: working with local public health, learning from people in the field, and recruiting students who want to make a real difference. Our first focus is the opioid crisis.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="research" class="content-block research">
-      <h2><i class="fas fa-flask icon-blue"></i> STEM-med Research</h2>
-      <p><em>Coming soon: youth-led research projects advancing science and medicine in underserved areas.</em></p>
+    <!-- Initiatives -->
+    <section id="initiatives" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Our initiatives</h2>
+        </div>
+
+        <div class="feature-list">
+          <article class="feature">
+            <span class="feature-num">01</span>
+            <div>
+              <h3>Narcan distribution</h3>
+              <p>Getting naloxone nasal spray into shelters, community spaces, and the hands of people who might be first on the scene of an overdose.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <span class="feature-num">02</span>
+            <div>
+              <h3>Community education</h3>
+              <p>Teaching people how to recognize an overdose and respond, and running a social media campaign so more people know what they can do.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <span class="feature-num">03</span>
+            <div>
+              <h3>Fentanyl test strips</h3>
+              <p>Working toward providing test strips to people in underserved areas to help prevent overdoses before they happen.</p>
+            </div>
+          </article>
+        </div>
+
+        <a href="initiatives.html" class="text-link">Read about our Rural Healthcare Initiative <i class="fas fa-arrow-right"></i></a>
+      </div>
     </section>
 
-    <section id="stories" class="content-block stories">
-      <h2><i class="fas fa-book-open icon-red"></i> Stories</h2>
-      <p><em>Coming soon: real stories from students and mentors making an impact with STEM-med.</em></p>
+    <!-- Why it matters -->
+    <section id="why" class="section section-dark">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Why it matters</p>
+          <h2>Anyone can save a life with Narcan.</h2>
+        </div>
+        <div class="fact-grid">
+          <div class="fact">
+            <i class="fas fa-prescription-bottle-medical"></i>
+            <h3>No prescription needed</h3>
+            <p>Naloxone nasal spray has been FDA-approved for over-the-counter sale since 2023.</p>
+          </div>
+          <div class="fact">
+            <i class="fas fa-stopwatch"></i>
+            <h3>Fast and simple</h3>
+            <p>It's a nasal spray that can reverse an opioid overdose in minutes. No medical training required.</p>
+          </div>
+          <div class="fact">
+            <i class="fas fa-shield-heart"></i>
+            <h3>Safe to use</h3>
+            <p>Naloxone has no effect on someone who doesn't have opioids in their system, so it's safe to give if you're unsure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get involved -->
+    <section id="join" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Get involved</p>
+          <h2>We need student power.</h2>
+          <p class="section-sub">No experience required. If you care about your community, there's a role for you. Volunteer hours count, and so does what you'll learn.</p>
+        </div>
+
+        <div class="roles">
+          <div class="role"><i class="fas fa-truck-medical"></i><h3>Outreach &amp; distribution</h3><p>Help get Narcan to shelters and community sites.</p></div>
+          <div class="role"><i class="fas fa-bullhorn"></i><h3>Social media &amp; design</h3><p>Run our awareness campaign and make it look great.</p></div>
+          <div class="role"><i class="fas fa-chart-line"></i><h3>Research &amp; data</h3><p>Track our impact and dig into local health data.</p></div>
+          <div class="role"><i class="fas fa-school"></i><h3>School leads</h3><p>Start a STEM-med team at your school.</p></div>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Ready to help?</h3>
+            <p>Send us a quick email with your name, school, and what you're interested in.</p>
+          </div>
+          <a href="mailto:stemmedproject@gmail.com?subject=I%20want%20to%20join%20STEM-med" class="btn btn-primary">Email Us to Join <i class="fas fa-envelope"></i></a>
+        </div>
+
+        <p class="partner-note"><i class="fas fa-handshake"></i> <strong>Schools, organizations, and health professionals:</strong> we'd love to partner. Reach us at <a href="mailto:stemmedproject@gmail.com">stemmedproject@gmail.com</a>.</p>
+      </div>
+    </section>
+
+    <!-- Coming soon -->
+    <section class="section section-alt section-tight">
+      <div class="container upcoming">
+        <div class="upcoming-item">
+          <i class="fas fa-flask"></i>
+          <div><h3>Research <span class="tag">Coming soon</span></h3><p>Youth-led research projects advancing science and medicine in underserved areas.</p></div>
+        </div>
+        <div class="upcoming-item">
+          <i class="fas fa-book-open"></i>
+          <div><h3>Stories <span class="tag">Coming soon</span></h3><p>Real stories from the students and mentors making an impact with STEM-med.</p></div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer id="contact" class="footer">
-    <div class="footer-inner">
-      <p>© 2025 STEM-med.org — All rights reserved.</p>
-      <nav class="footer-nav" aria-label="Footer social and contact links">
-        <a href="https://www.instagram.com/stemmed_project/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.gofundme.com/f/support-rural-health-in-illinois-vermillion-county" aria-label="Donate" target="_blank" rel="noopener"><i class="fas fa-donate"></i> Donate</a>
-        <a href="mailto:stemmedproject@gmail.com" aria-label="Email STEM-med project"><i class="fas fa-envelope"></i> Email</a>
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo logo-light"><span class="logo-mark"><i class="fas fa-plus"></i></span> STEM-med</a>
+        <p>A youth-led nonprofit expanding access to science and healthcare in Vermilion County, Illinois.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="mailto:stemmedproject@gmail.com"><i class="fas fa-envelope"></i> stemmedproject@gmail.com</a>
+        <a href="https://www.instagram.com/stemmed_project/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @stemmed_project</a>
+        <a href="https://www.gofundme.com/f/support-rural-health-in-illinois-vermillion-county" target="_blank" rel="noopener"><i class="fas fa-heart"></i> Support our work</a>
       </nav>
     </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2025 STEM-med.org. All rights reserved.</p>
+      <p class="disclaimer">In an emergency, call 911. STEM-med provides education and resources, not medical advice.</p>
+    </div>
   </footer>
-
-  <!-- Floating Orbs -->
-  <div class="orb orb1" aria-hidden="true"></div>
-  <div class="orb orb2" aria-hidden="true"></div>
-  <div class="orb orb3" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>

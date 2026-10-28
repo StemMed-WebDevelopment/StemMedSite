@@ -238,12 +238,39 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   margin-bottom: 3rem;
 }
 .officer { border-top: 2px solid var(--border); padding-top: 1.5rem; }
-.officer-lead { border-top-color: var(--teal); }
 .officer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
 .officer-top i { font-size: 1.4rem; color: var(--teal); }
 .officer h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
 .officer p { color: var(--muted); margin-bottom: 0.9rem; }
 .tag-open { background: var(--teal-soft); color: var(--teal-dark); margin-left: 0; }
+.officer ul { margin: 0 0 1rem 1.1rem; color: var(--muted); }
+.officer li { margin-bottom: 0.3rem; }
+.officer .officer-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy); margin-bottom: 0.4rem; }
+
+.join-options { margin-bottom: 2rem; }
+.join-option {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.join-option:hover { border-color: var(--teal); box-shadow: var(--shadow); }
+.join-option > i:first-child { font-size: 1.5rem; color: var(--teal); }
+.join-option div { flex: 1; }
+.join-option h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }
+.join-option p { color: var(--muted); }
+.join-arrow { color: var(--teal); }
+
+.apply-steps { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.apply-steps li { counter-increment: step; }
+.apply-steps li::before { content: counter(step, decimal-leading-zero); display: block; font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; color: var(--teal); margin-bottom: 0.5rem; }
+.apply-steps strong { display: block; color: var(--navy); font-family: var(--font-head); font-size: 1.1rem; margin-bottom: 0.25rem; }
+.apply-steps span { color: var(--muted); }
 
 .cta-band {
   display: flex;
@@ -411,7 +438,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   .hero { padding: 3rem 0 3.5rem; }
   .section { padding: 4rem 0; }
   .feature { grid-template-columns: 1fr; gap: 0.5rem; }
-  .roles, .upcoming, .goal-list, .officers { grid-template-columns: 1fr; }
+  .roles, .upcoming, .goal-list, .officers, .apply-steps { grid-template-columns: 1fr; }
   .cta-band, .subscribe { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
   .story-item { grid-template-columns: 1fr; gap: 0.75rem; }
   .footer-grid { flex-direction: column; }

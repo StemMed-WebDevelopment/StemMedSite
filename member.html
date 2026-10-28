@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Become a Member | STEM-med</title>
+  <meta name="description" content="Join STEM-med as a member. Get the STEM-med Stories newsletter, invites to events and volunteer opportunities, and pick the projects you want to help with." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="STEM-med home">
+        <span class="logo-mark"><i class="fas fa-plus"></i></span>
+        STEM-med
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav aria-label="Main">
+        <ul id="nav-menu">
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="initiatives.html" class="nav-link">Initiatives</a></li>
+          <li><a href="index.html#why" class="nav-link">Why It Matters</a></li>
+          <li><a href="officers.html" class="nav-link">Get Involved</a></li>
+          <li><a href="stories.html" class="nav-link">Stories</a></li>
+          <li><a href="officers.html" class="btn btn-primary btn-sm nav-cta">Join the Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Become a Member</p>
+        <p class="eyebrow">Membership</p>
+        <h1>Become a member.</h1>
+        <p class="lead">Students, parents, healthcare workers, neighbors: everyone is welcome. Stay connected, show up when it counts, and help with the projects you care about. Membership is free and takes less than a minute.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container member-grid">
+
+        <aside class="member-perks">
+          <h2>Every member gets</h2>
+          <ul class="perk-list">
+            <li>
+              <i class="fas fa-book-open"></i>
+              <div><strong>The STEM-med Stories newsletter</strong><span>Updates on Vermilion County health, community resources, and student opportunities.</span></div>
+            </li>
+            <li>
+              <i class="fas fa-calendar-days"></i>
+              <div><strong>Event &amp; volunteer invites</strong><span>Member meetings, community health events, outreach days, workshops, and guest speakers.</span></div>
+            </li>
+            <li>
+              <i class="fas fa-user-group"></i>
+              <div><strong>First notice on leadership roles</strong><span>Hear about officer openings and project-lead positions before anyone else.</span></div>
+            </li>
+          </ul>
+          <p class="perk-note">Want a bigger role? <a href="officers.html">See our officer positions.</a></p>
+        </aside>
+
+        <div class="form-card">
+          <form id="member-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required maxlength="100" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required maxlength="150" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="school">School or organization <span class="optional">(optional)</span></label>
+              <input id="school" name="school" type="text" maxlength="120" />
+            </div>
+
+            <fieldset class="toggles">
+              <legend>I'm also interested in <span class="optional">(optional)</span></legend>
+
+              <label class="toggle">
+                <input type="checkbox" name="interests" value="Writing for STEM-med Stories" />
+                <span class="switch" aria-hidden="true"></span>
+                <span class="toggle-text">
+                  <strong>Writing for STEM-med Stories</strong>
+                  <span>Contribute articles, interview local healthcare professionals, or help produce the newsletter.</span>
+                </span>
+              </label>
+
+              <label class="toggle">
+                <input type="checkbox" name="interests" value="Health Projects" />
+                <span class="switch" aria-hidden="true"></span>
+                <span class="toggle-text">
+                  <strong>Health projects</strong>
+                  <span>Help with health education, public-health research, and science outreach projects.</span>
+                </span>
+              </label>
+            </fieldset>
+
+            <!-- Spam trap: hidden from people, bots fill it in -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Leave this empty</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" id="consent" name="consent" value="yes" required />
+              <span>I agree to receive emails from STEM-med. We'll never share your info, and you can unsubscribe anytime.</span>
+            </label>
+
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Become a Member <i class="fas fa-arrow-right"></i></button>
+          </form>
+
+          <div class="form-success" id="form-success" hidden tabindex="-1">
+            <span class="success-icon"><i class="fas fa-check"></i></span>
+            <h2>Welcome to STEM-med!</h2>
+            <p>You're signed up. Watch your inbox for the next STEM-med Stories newsletter and upcoming event invites.</p>
+            <a href="stories.html" class="btn btn-ghost">Read STEM-med Stories</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="logo logo-light"><span class="logo-mark"><i class="fas fa-plus"></i></span> STEM-med</a>
+        <p>A youth-led nonprofit expanding access to science and healthcare in Vermilion County, Illinois.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="mailto:stemmedproject@gmail.com"><i class="fas fa-envelope"></i> stemmedproject@gmail.com</a>
+        <a href="stories.html"><i class="fas fa-book-open"></i> STEM-med Stories</a>
+        <a href="https://www.instagram.com/stemmed_project/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @stemmed_project</a>
+        <a href="https://www.gofundme.com/f/support-rural-health-in-illinois-vermillion-county" target="_blank" rel="noopener"><i class="fas fa-heart"></i> Support our work</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2025 STEM-med.org. All rights reserved.</p>
+      <p class="disclaimer">In an emergency, call 911. STEM-med provides education and resources, not medical advice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="member.js"></script>
+</body>
+</html>

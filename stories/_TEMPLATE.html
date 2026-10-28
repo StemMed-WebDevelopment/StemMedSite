@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  STEM-med STORIES — NEW STORY TEMPLATE
+  ============================================================
+  HOW TO PUBLISH A NEW STORY:
+  1. Copy this file and rename the copy, using lowercase words and dashes,
+     e.g.  stories/interview-with-jane-doe.html
+  2. Replace everything in [BRACKETS] below (title, date, author, text).
+  3. Delete any sections you don't need (like the quote or the list).
+  4. Add the story to the list on stories.html (instructions are in that file).
+  5. Commit and push. Done!
+
+  TIPS:
+  - Each paragraph goes inside its own <p> ... </p>
+  - Section headings go inside <h2> ... </h2>
+  - Interview questions: put them in <p><strong>Q: ...</strong></p>
+  - Always get permission before quoting or naming someone.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[STORY TITLE] | STEM-med</title>
+  <meta name="description" content="[ONE-SENTENCE SUMMARY OF THE STORY]" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo" aria-label="STEM-med home">
+        <span class="logo-mark"><i class="fas fa-plus"></i></span>
+        STEM-med
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <nav aria-label="Main">
+        <ul id="nav-menu">
+          <li><a href="../index.html#about" class="nav-link">About</a></li>
+          <li><a href="../initiatives.html" class="nav-link">Initiatives</a></li>
+          <li><a href="../index.html#why" class="nav-link">Why It Matters</a></li>
+          <li><a href="../index.html#join" class="nav-link">Get Involved</a></li>
+          <li><a href="../stories.html" class="nav-link active">Stories</a></li>
+          <li><a href="../index.html#join" class="btn btn-primary btn-sm nav-cta">Join the Team</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <article class="article">
+          <header class="article-header">
+            <p class="breadcrumb"><a href="../stories.html"><i class="fas fa-arrow-left"></i> All stories</a></p>
+            <p class="eyebrow">[Interview / Update / Spotlight]</p>
+            <h1>[STORY TITLE]</h1>
+            <p class="byline">By <strong>[AUTHOR NAME], Journalist</strong> &middot; <time datetime="[YYYY-MM-DD]">[Month Day, Year]</time></p>
+          </header>
+
+          <div class="article-body">
+            <p>[Opening paragraph: who is this story about, and why does it matter to our community?]</p>
+
+            <h2>[Section heading]</h2>
+            <p>[Body paragraph.]</p>
+
+            <blockquote>"[A powerful quote from the person you interviewed.]"</blockquote>
+
+            <h2>[Interview]</h2>
+            <p><strong>Q: [Your question?]</strong></p>
+            <p>[Their answer.]</p>
+            <p><strong>Q: [Your next question?]</strong></p>
+            <p>[Their answer.]</p>
+
+            <h2>[How you can help]</h2>
+            <ul>
+              <li>[Action item one]</li>
+              <li>[Action item two]</li>
+            </ul>
+          </div>
+
+          <footer class="article-footer">
+            <a href="../stories.html" class="text-link"><i class="fas fa-arrow-left"></i> Back to all stories</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="../index.html" class="logo logo-light"><span class="logo-mark"><i class="fas fa-plus"></i></span> STEM-med</a>
+        <p>A youth-led nonprofit expanding access to science and healthcare in Vermilion County, Illinois.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="mailto:stemmedproject@gmail.com"><i class="fas fa-envelope"></i> stemmedproject@gmail.com</a>
+        <a href="../stories.html"><i class="fas fa-book-open"></i> STEM-med Stories</a>
+        <a href="https://www.instagram.com/stemmed_project/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @stemmed_project</a>
+        <a href="https://www.gofundme.com/f/support-rural-health-in-illinois-vermillion-county" target="_blank" rel="noopener"><i class="fas fa-heart"></i> Support our work</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2025 STEM-med.org. All rights reserved.</p>
+      <p class="disclaimer">In an emergency, call 911. STEM-med provides education and resources, not medical advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

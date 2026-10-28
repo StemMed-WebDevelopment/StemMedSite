@@ -40,10 +40,17 @@ const revealObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.1 });
 
+// Only animate sections that start below the fold, so the first screen never waits
 document.querySelectorAll('main .section .container').forEach(el => {
+  if (el.getBoundingClientRect().top < window.innerHeight) return;
   el.classList.add('reveal');
   revealObserver.observe(el);
 });
+
+// Safety net: never leave content hidden if the observer doesn't fire
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+}, 2500);
 
 // Add a border/shadow to the header once the page is scrolled
 const header = document.querySelector('.site-header');
